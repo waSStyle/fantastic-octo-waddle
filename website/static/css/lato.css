@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "LatoWebHairline";
+    src: url("/prisma/assets/fonts/Lato-Hairline.eot"); 
+    src: url("/prisma/assets/fonts/Lato-Hairline.eot?#iefix") format("embedded-opentype"), 
+         url("/prisma/assets/fonts/Lato-Hairline.woff2") format("woff2"), 
+         url("/prisma/assets/fonts/Lato-Hairline.woff") format("woff"), 
+         url("/prisma/assets/fonts/Lato-Hairline.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: "LatoWebLight";
+    src: url("/prisma/assets/fonts/Lato-Light.eot"); 
+    src: url("/prisma/assets/fonts/Lato-Light.eot?#iefix") format("embedded-opentype"), 
+         url("/prisma/assets/fonts/Lato-Light.woff2") format("woff2"), 
+         url("/prisma/assets/fonts/Lato-Light.woff") format("woff"), 
+         url("/prisma/assets/fonts/Lato-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: "LatoWebMedium";
+    src: url("/prisma/assets/fonts/Lato-Medium.eot"); 
+    src: url("/prisma/assets/fonts/Lato-Medium.eot?#iefix") format("embedded-opentype"), 
+         url("/prisma/assets/fonts/Lato-Medium.woff2") format("woff2"), 
+         url("/prisma/assets/fonts/Lato-Medium.woff") format("woff"), 
+         url("/prisma/assets/fonts/Lato-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}

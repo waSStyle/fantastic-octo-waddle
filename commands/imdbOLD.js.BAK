@@ -1,0 +1,66 @@
+const request = require('request');
+const _ = require('underscore');
+
+
+module.exports = {
+	commands: [
+		"imdb"
+	],
+	description: "Imdb",
+	usage: "imdb <movie/series>",
+	category: "Fun",
+	hidden: false,
+	execute: (bot, r, msg, args) => {
+		if (args.length > 0) {
+            const letter = args[0]; 
+            const url = ('http://sg.media-imdb.com/suggests/' + letter[0].toLowerCase() + '/' + args +'.json');
+            request({
+                method: 'GET',
+                uri: url,
+            }, 
+            function(err, response, body) {
+                var data = body.substring(body.indexOf('(')+1);
+                data = JSON.parse(data.substring(0,data.length-1));
+                var related = [];
+                _.each(data.d, function(movie, index) {
+                    related.push({
+					embed: {
+                        "title": movie.l,
+                        "description": "\u200b",
+                        "color": 16772879,
+                        "url": 'http://www.imdb.com/title/' + movie.id,
+                        "fields": [
+                            {
+                              "name": "Starring",
+                              "value": movie.s,
+                              "inline": true
+                            },
+                            {
+                              "name": "Release Year",
+                              "value": movie.y
+                            },
+                        ],
+                        "thumbnail": {
+                            "url": movie.i ? movie.i[0] : ''
+                        },
+                        "footer": {
+                            "text": "From the Internet Movie Database.",
+                            "icon_url": "https://logoepscdnphoto.b-cdn.net/wp-content/uploads/2016/12/imdb_logo.png"
+                          }
+                        }
+                    });
+                });
+                msg.channel.send(related[0]);
+            });
+            
+        } else {
+			msg.channel.send({
+				embed: {
+					title: "Error!",
+					color: 0xE50000,
+					description: "Missing `<text>` option."
+				}
+            });
+        }
+	}
+};
