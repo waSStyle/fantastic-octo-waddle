@@ -47,10 +47,3 @@ fs.readdir("./commands", (error, files) => {
 		}
 	});
 });
-
-setInterval(function() {
-    var removed = findRemoveSync(path.join(__dirname, '/public'), { age: { seconds: 3600 } });
-    if (removed.length > 0) {
-      console.log('removed:', removed);
-    }
-  }, 3600000);
