@@ -41,7 +41,7 @@
     "scripts": {
         "start": "node shard.js"
     },
-    "engines": { "node": "8.4.0" },
+    "engines": { "node": "9.9.0" },
     "author": "Sikksens",
     "license": "Apache-2.0"
 }
